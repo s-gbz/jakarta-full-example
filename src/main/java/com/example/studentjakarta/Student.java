@@ -1,4 +1,11 @@
 package com.example.studentjakarta;
 
-public record Student(String id, String name, String course) {
+import jakarta.validation.constraints.NotNull;
+
+public record Student(
+        @NotNull(message = "Die ID darf nicht leer sein")
+        String id,
+        @NotNull(message = "Der Name darf nicht leer sein")
+        String name,
+        String course) {
 }

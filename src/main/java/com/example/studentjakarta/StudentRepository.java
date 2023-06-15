@@ -5,17 +5,18 @@ import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
 @Named("studentRepository")
 public class StudentRepository {
 
-    private List<Student> students = List.of(
+    private List<Student> students = new ArrayList<>(List.of(
             new Student("1", "Anna", "Computer Science"),
             new Student("2", "Bob", "Mathematics"),
             new Student("3", "Clarissa", "Physics")
-    );
+    ));
 
     public StudentRepository() { }
 
